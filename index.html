@@ -124,7 +124,7 @@
                             <img src="moon.png" alt="" width="65px">
                             <div class="d-flex flex-column gap-2">
                                 <h6 class="m-0">Sunset</h6>
-                                <h5 class="m-0" id="sunsetTime">7:00 Pm</h5>
+                                <h5 class="m-0" id="sunsetTime">7:00 Pm</h5> 
                             </div>
 
                         </div>
@@ -192,7 +192,7 @@
 
 
         async function fetchAQIData(lat, lon) {
-            let fetchAQIData = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=8e6d0c6edd572022b586942cc5750542&units=metric`)
+            let fetchAQIData = await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=8e6d0c6edd572022b586942cc5750542`)
             let formattedData = await fetchAQIData.json();
             console.log('AQI Data: ', formattedData);
             let list = formattedData.list[0].components;
@@ -239,7 +239,7 @@
                     forecastHtml += `
                         <div class="forecastRow d-flex align-items-center justify-content-between">
                             <div class="d-flex gap-2 align-items-center">
-                                <img src="./cloud.png" alt="" width="35px">
+                                <img src="cloud.png" alt="" width="35px">
                                 <h6 class="m-0">${forecast.temp} &deg;C</h6>
                             </div>
                             <h6 class="m-0">${forecast.day}</h6>
@@ -345,9 +345,4 @@
 
 </body>
 
-
 </html>
-
-
-
-
